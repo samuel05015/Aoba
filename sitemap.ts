@@ -1,0 +1,1 @@
+import type { MetadataRoute } from 'next';import { treatments } from '@/content/treatments';export default function sitemap():MetadataRoute.Sitemap{const base=process.env.NEXT_PUBLIC_SITE_URL||'http://localhost:3000';return [{url:base},{url:`${base}/politica-de-privacidade`},...treatments.filter(t=>t.enabled).map(t=>({url:`${base}/tratamentos/${t.slug}`}))]}
